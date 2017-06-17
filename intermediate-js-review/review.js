@@ -46,8 +46,6 @@ var ans5 = 'belongs to the overlord';
 //     }
 // };
 
-// myFn.bind(contextObj(param1, param2));
-// return myFun(param1, param2);
 
 ///Context///
 
@@ -55,13 +53,13 @@ var ans5 = 'belongs to the overlord';
 /////to the contextObj, and with the two parameters passed in - return
 /////the result.
 function contextIt(myFn, contextObj, param1, param2) {
-  return myFn(param1, param2).bind(contextObj);
+  var x =  myFn.bind(contextObj);
+  return x(param1, param2)
 }
-
 //8. Do the same as you did in question 6, except with the
 /////paramArray passed in instead
 function contextIt2(myFn, contextObj, paramArray) {
-  return myFn(paramArray).bind(contextObj);
+  return myFn.apply(contextObj, paramArray)
 }
 
 //9. Inside contextIt3, return a new function that permanently
